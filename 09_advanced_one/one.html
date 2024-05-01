@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning XMLHttps</title>
+</head>
+
+<body style="background-color: #414141;">
+
+    <div id="card">
+        <button class="generatingCard">GET the CARD</button>
+    </div>
+
+</body>
+<script>
+
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                let data = JSON.parse(xhr.responseText)
+                console.log(data.avatar_url)
+                console.log(data.followers)
+            }
+    }
+   xhr.send()
+   let avatar = ` https://avatars.githubusercontent.com/u/11613311?v=4 `
+    let followers = 20633
+
+    const mainDiv = document.querySelector('#card')
+    mainDiv.style.padding = '20px'
+
+    const imgCard = document.createElement('div')
+    const followersCard = document.createElement('div')
+
+    imgCard.style.width = '100%'
+    imgCard.style.height = '70%'
+    imgCard.style.backgroundImage = 'https://avatars.githubusercontent.com/u/11613311?v=4'
+    imgCard.style.backgroundSize = 'cover'
+    imgCard.style.backgroundPosition = 'center'
+
+    const followersData = document.createTextNode('Followers: 20633')
+    followersCard.appendChild(followersData)
+    followersCard.style.width = '100%'
+    followersCard.style.height = '30%'
+    followersCard.style.textAlign = 'center'
+
+    const button = document.querySelector('.generatingCard')
+    button.addEventListener('click', (event)=>{
+            mainDiv.appendChild(imgCard)
+            mainDiv.appendChild(followersCard)
+
+})
+
+
+</script>
+
+</html>

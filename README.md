@@ -1,2 +1,3 @@
-# javaScript-Chai-Aur-Code
-Code Repo for JavaScript Chai-Aur-Code
+# JavaScript-ChaiAurCode
+CODE Repo for Learning JavaScript Chai Aur Code 
+Exiited to develop some great production level project.

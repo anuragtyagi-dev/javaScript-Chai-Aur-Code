@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+
+<body>
+    <p>Chai Aur Code</p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+// ************************************  first approach
+
+    // const start = document.querySelector('#start')
+    // const stop = document.querySelector('#stop')
+    // let on
+    // let off
+
+    // function loadingName(name) {
+    //     console.log(`${name}`)
+    // }
+
+    // function printingName(name) {
+    //     start.addEventListener('click', (event) => {
+    //         on = setInterval(loadingName, 1000, name)
+    //     })
+    // }
+
+    // printingName('anurag')
+
+    // document.querySelector('#stop').addEventListener('click', (event) => {
+    //     clearInterval(on)
+    // })
+
+
+// ********************** SECOND Approach (optimised code)
+/* 
+         const start = document.querySelector('#start');
+         const stop = document.querySelector('#stop');
+         let on;
+
+        document.querySelector('#start').addEventListener('click', (event) => {
+            on = setInterval((name) => (console.log(`${name}`)), 1000, 'Anurag Tyagi')
+        })
+
+        document.querySelector('#stop').addEventListener('click', (event) => {
+            clearInterval(on)
+        })
+
+*/
+
+</script>
+
+</html>

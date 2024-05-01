@@ -1,0 +1,381 @@
+/* IMPORTANT for Interviews */
+
+/* In any progarmming language there's categorisation of dataType mainly on two basis , that is 
+first: How a data is stored in memory 
+second: How that data can be access from memory */
+
+_________________________________________________________________________
+
+// Important for Interviews 
+/* typeof 12 is number , typeof "hello world" is string, similarly  typeof null is object , typeof undefined is undefined */
+
+// In this typeof null is object , which makes null special
+
+_________________________________________________________________________
+
+
+//IMPORTANT for Interview 
+Note: javaScript is a dynamically typed language as it assign variable type during code execution or compiling 
+
+_________________________________________________________________________
+
+
+// IMPORTANT for interview
+let userAccount = null // value : null , returnValue or dataType or typeof : object , also if null is to be converted in number then it gives 0 as value
+
+_________________________________________________________________________
+
+// IMPORTANT for Interviews 
+/*
+in primitive dataType 
+Number returns Number
+String returns String 
+Boolean returns Boolean 
+Symbol returns Symbol
+BigInt returns BigInt
+undefined returns undefined
+null returns object // ***** MOST IMPORTANT TO NOTE *****
+
+*/
+
+/*
+
+in nonPrimitive or Reference dataType  every thing returns forms of object
+
+Array returns object 
+object returns object 
+function returns objectFunction
+
+*/
+_________________________________________________________________________
+
+
+//NOTE: IMPORTANT FOR INTERVIEWS 
+/* Primitive dataType uses Stack memory and nonPrimitive uses heap
+
+In Stack Memory , if we declare some varialbe and another varialbe and gives both same value by declaring second variable same as first one , then the second variable given a copy value of first variable (Not the Reference ) meaning , if we change second variable value later then it has no effect on first variable 
+*/
+// Example of STACK:
+let dataOne = 20 
+let dataTwo = dataOne
+
+console.table([dataOne, dataTwo])
+
+//NOTE: this declares the dataOne and dataTwo variables in stack and also given there values in stack
+
+//Example of HEAP:
+let userOne = {
+    bank:"BOB",
+    email: "anuarg@google.com",
+}
+//IMPORTANT NOTE: in this example userOne variable is declared in STACK but there values are due of OBJECT dataType , declared in HEAP memory as as a reference 
+
+let userTwo = userOne
+
+console.table([userOne, userTwo])
+
+// Now if we made changes in userTwo , the data that is declared in HEAP is as due to REFERENCE TYPE made availabe to both , so it will be change to BOTH of them
+
+userTwo.email = "anurag@microsoft.com"
+
+console.table([userOne, userTwo])
+
+_________________________________________________________________________
+
+
+// IMPORTANT FOR INTERVIEWS 
+// typeof new Date() is object and it also returns object 
+// typeof Date() is String but returns String
+// typeof Date().now is number but returns number
+
+
+// SuperIMPORTANT TO NOTE *****
+This is due to when we add new behind anything it create that thing in object
+and object always returns object ( typeof , returnValue, or return are same in sense)
+
+
+_________________________________________________________________________
+
+
+
+// Methods in Array
+
+const myArr = [0,4,5,56,64,45]
+
+myArr.push(7) // This will add anything or any value you provide at the end of an array assigned the index
+
+myArr.pop() // This will remove the end value of an array, it does'nt requires any parameter or argument inside it 
+
+//NOTE , SAME AS PUSH AND POP we have unshit and shit also but they are no longer recommende to use as they are use to puch values from start which causes an ISSUE : that is , every value inside an array shiftes from its previous index , which when array having large values cause hussle for dev and also reduces the efficiency of computer
+
+// Example :
+myArr.unshift(333) // Same as push but from starting index
+
+myArr.shift() // Same as pop but from starting index
+
+// ******************************** IMPORTANT FOR INTERVIEWS 
+// MOST IMPORTANT METHODS of Array
+
+// to know some Boolean value inside an array we use include method
+// Example
+console.log(myArr.includes(8)) // This way we can now print and know that if array has any thing that we want may it be value , number , string...etc
+
+console.log(myArr.indexOf(64)) // This way we can know the index of the value or string or number inside the array , NOTE: if the value provided is not in array , then the compiler gives -1 as value which literaly says there nothing that you're looking for and if the value matches , then it gives index of that value
+console.log(myArr.indexOf(8)) // Example for -1 output
+
+
+//NOTE : we can also make a copy of array values and store it in any variable as a STRING dataType
+
+// Example
+
+const newArr = myArr.join()
+console.log(newArr)
+console.log(typeof newArr)
+
+
+// MOST IMPORTANT METHOD in Array
+// slice and splice , are the two main methods which are also asked in javaScript interviews 
+
+console.log("Main Array", myArr)
+
+const na1 = myArr.slice(1,4) // parameters provided inside slice and splice are the index from where to where the dev wants the values  
+
+console.log("Slice array ",na1)
+console.log("after slice main arrray ", myArr)
+
+// slice is used to get the value from "inclusive" starting index to "exclusive" ending index , and "Also" does'nt change the original array
+
+// but in splice , it is used to get the values from "inclusive" starting index to "INCLUSIVE" ending index , and "IT DOES" CHANGE the ORIGINAL ARRAY
+
+// Example of splice
+
+console.log("Splice array ",myArr.splice(1,4))
+console.log("after splice main arrray" , myArr)
+
+// ************************ IMPORTANT FOR INTERVIEWS 
+
+// Array can give empty array , when and how ?
+
+console.log(Array.from({name:"Anurag" ,car:true})) // jab tak hum yeh na bataye ki array ke andar ka object ka usme konse konse key ko hume array banana hai with the help of from method tab tak vo ek empty array hi bana dega.
+
+_________________________________________________________________________
+
+02_Basics/03_Objects
+
+
+// IMPORTANT FOR INTERVIEWS
+// NOTE: in object , we have powers to define keys which holds value of anykind (Number, String, Boolean, undefined, Symbol, Null, BigInt) not like ARRAY that can only be access through index , meaning in Hindi: objects me humare pass yeh skati hoti hai ki hum value ko hold karne vale index ko bhi kuch naam de skte hai taaki jab un object ke andar ki value ki kabhi jarurat pade to hum directly unko apne dwara dia gay assigned naaam se access kar sake , array ki tarah nahi ki keval index ke through hi access mil skta hai.
+
+// NOTE: different objects when adding together in one object must not contain same key name 
+
+_________________________________________________________________________
+
+02_Basics/04_Objects
+
+
+
+//*********************************** IMPORTANT FOR INTERVIEWS 
+
+let myObj = {
+    name:"anuarg",
+    email:"anurag@google.com",
+    userID: 11,
+    userLoggendIn: true,
+
+}
+
+// now to get keys and values either seperately or together , we uses Object.keys method and Object.values or Object.entries
+
+console.table([ `Values of keys : ${Object.keys(myObj)}` , `Values of values : ${ Object.values(myObj)}` , `values together with keys and values : ${Object.entries(myObj)}`])
+
+// NOTE: This will give an array 
+
+console.log(typeof Object.keys(myObj))
+
+
+
+//  ***************************************** IMPORTANT
+// destructing object
+
+const key = Symbol(101)
+let game = {
+    name:"anuragTyagi",
+    userName:"MiniNinja",
+    Plan:"Valid",
+    Password: true,
+    passwordId: 11,
+    [key]:"required"
+}
+
+//  Now if we need to print username or anything from this object then we have to do like this again and again : console.log( game.userName )
+
+// if we need to print userName from game object 100 times then the real hussle starts so to avoid this we can assign userName from game object a constant or variable with reference to game object 
+// Example:
+/* THIS IS MOST IMPORTANT FOR INTERVIEWS */
+const {userName} = game
+console.log(userName)
+
+// now we can also do userName to any kind of const name 
+// LIKE THIS
+
+const {userName: harry} = game
+console.log(userName) 
+
+
+_________________________________________________________________________
+
+03/01
+
+
+// ************************************* IMPORTANT FOR INTERVIEWS
+// Example : we can give parameter a 'by default' value , matlb , agar argument kuch bhi nahi aaya to bhi by default function ke parameter ke pass kuch value hogi
+
+
+// function userInfo(username){
+//     let harry = `${username} just logged in , welcome again in oasis`
+//     return harry
+// }
+
+// const userloggingInfo = userInfo(`AnuragTyagi`)
+// console.log(userloggingInfo)
+
+// Example Two
+
+// Note: the parameter username has given a by default value "anurag"
+// CASE 1 : if argument is not given anything , Then it will take by default provided value from the parameter
+
+function userCard(username="anurag"){
+    return console.log(`Hello ${username} and welcome again in Oasis`)
+}
+userCard('jerry')
+
+
+// ***************************** SUPER IMPORTANT 
+
+// CASE 2 : if argument is given blank STRING , "" , Then it will print blank (NOT By defalut value) yesa isliye kyuki blank string undefined category me nahi aata balki string ki category me ata hai , function ke parameter ke andar phele se dii gai by default values tabhi chalengi jab argument undefined hoga
+userCard("")
+
+
+// CASE 3 : if argument is given nothing (nothing ka meaning hai undefined , ki user ne kuch value dia hi nahi ) to undefined case me by default value parameter ki use hogi
+userCard()
+
+// CASE 4: if argument is null 
+userCard(null) // or userCard("null") , In both cases null will be printed , kyuki abhi bhi argument kuch value hold kia hua hai bhalehi null , par kyuki yeh undefined nahi hai to null print hoga.            jabtak undefined naa ho argument tabtak function ke parameters ki by default value use nahi hogi
+
+_________________________________________________________________________
+
+03/02
+
+// CASE 2: ****************** MOST IMPORTANT
+
+function checking(val1, val2, ...val){
+    return console.log(`val1: ${val1} val2: ${val2} val: ${val}  `)
+}
+checking(2 ,3, 5, 70, 10, 11)
+
+// In this example , val1 is on first parameter ,so it will store first argument, similarly val2 is on second parameter it will store second argument , now val is written using rest operator , ...val , so it will store mulitple ya fir saare arguments value jitne bhi diye jayenge , aaru iska dataType array hoga aur typeof object
+
+_________________________________________________________________________
+
+03/03
+
+// NOTE : any thing declared in global scope , is also availabe in functional scope but not the other way around
+
+// ******************************* MOST IMPORTANT FOR INTERVIEWS 
+//Global scope ka matlab hai yese variables ya constants jo ki humne kisi bhi function ( if, function , for ,etc...) ke andar naa declare kare ho
+// functional scope ka matlab hai yese variables ya constants jo humne kisi bhi function ( if, function , for ,etc...) ke andar declare kare ho 
+
+let a = 1 //     These both are global scope
+const b = a++ //
+
+var c = 100   // var doesn't follow global scope rule 
+
+if (true) {
+    let a = 100
+    const b = 500
+    var c = 101
+    console.table([`inner a: ${a}, inner b: ${b}, inner c: ${c}`])
+}
+
+console.table([`outer a: ${a}, outer b: ${b}, outer c: ${c}`])
+
+// yaha hum dekh sakte hai ki let aur const , dono ki value alag alag hai if ke andar yani functional or block scope me aur global scope me JABKI dono ki declaration key same name se hai a and b, but var kyuki isko follow nahi karta , to var jab global scope me declare hua tab uski value 100 thi and then jab var if ke functional scope me declare hua tab usene previously declared value ko overwrite kardia to var c , ki final value 101 ho gai , function scope meaning inner me check karoge tabhi aur global scope meaning outer me check karoge tab bhi ,                 final value of c = 101
+
+
+// ************************* MOST IMPORTANT for INTERVIWES
+
+// Global Scope alag hota hai code environment me aur core scope me 
+
+// core scope : matlab , browser pe jaake inspect karo , vaha ka console jo hai vo core environment hota hai , browser ke console ko core environment kahete hai aur vaha ke global scope ko core scope
+
+// code scope or code environment scope : jaise hum abhi apne vsCode ke teminal pe code debugging kar rahe hai , sourceCode ko run karke dekh rahe hai to isko bolte hai code environment , yaha ke global scope ko bolte hai code scope 
+
+
+// ************* NOTE : CORE SCOPE is different from CODE SCOPE 
+
+_________________________________________________________________________
+
+03/05
+
+
+// So this keyword ko use tab karte hai jab hum kisi object ke andar ki values ko refer karna chahte hai 
+
+// ******************** IMPORTANT FOR INTERVIEWS
+
+// this ki value browser me aur node enviroment me kya hai ?
+
+// what is node envrionment and why are we able to use it for coding in javaScript
+// ANS: phele javaScript ko chalana keval browser me padta tha , kyu ki javaScript ko chalane ke liye jo engine hai (complier aur interpreter) vo keval browser ke pass hi tha, phir javaScript ko chalane ke liye jo engine chaiye vo browser se nikal lia gya aur vaisi hi ek copy banai taaki javaScript pe programming keval browser pe hi naa kar sake , bakli code editors ke through terminal pe kar sake ya kahi aur jaha chahe. to nodejs ek engine hi hai jo javaScript ke code ko chala skta hai.
+
+// abh main baat yeh hai ki , kyuki initially javaScript browser pe chalti thi aur fir jaise jaise development hui , browser ache hogaye and kuch yese features hai jo browsers allow karte hai javaScript ko use karne ke liye , un features ko browser me ek container de diya gaya jise window kahate hai , window ek object type hai
+
+// kyuki yeh container sirf browser ke liye hai to uska node se koi lena dena nahi hai , isliye hum window object (jo ki ek container hai jisme kuch special features hai jo javaScript use karskti hai) node environment me work nahi karega.
+
+// so , this ki value (kyuki abh hume pata hai ki ek particular object ki internal values ke context be refere karne ke liye use hoti hai) in node ek empty object degi
+
+// and , this ki value in console of browser window object degi jisme kaafi saare methods hai jo hum use kar skte hai in javaScript 
+
+// NOTE: par hum funtion ke andar banai apni values ko this se access nahi kar sakte , keval object ke andar hi kar sakte hai , kyuki value ka return type object ( object function ) hai but jab tak hum function ko object me convert na kardee tab tak function ka behaviour function hi rahega.
+
+//_______________________________________________________________________
+
+03/06
+
+// IIFE : Imediately Invoked Function Expression
+
+// IIFE: is mainly used for two main reasons ,
+// First: IIFE ka matalb hai ki yesa function jo ekdum execute ho jaye , kaai baar hum chahte hai ki jaise hi humari website load ho to kuch functions ke dum chal jaye aur apna kaam karke website ke load hone tak complete karde, isliye IIFE ki use karne se vo function immediately run ho jaega
+
+// Second and MOST IMPORTANT Reason : kaafi baar yesa hota hai ki hum kuch variables global scope me declare karte hai and humare kuch functoins me hum kaai baar same name ke variables declare kardete hai , to hum nahi chate ki global scope me declared variables humare functional scope ko pollute kare , isiliye hum IIFE use kardete hai 
+
+// *************************** IMPORTANT FOR INTERVIEWS
+
+// after declaring function as IIFE , semi-colon to end the execution is necessary even in javaScript , other wise it will give error , yesa isliye hota hai kyuki IIFE run to hojaye ga but uss particular IIFE function ke baad kuch run nahi hoga kyuki complier ko abh yeh nahi pata ki IIFE ka execution khatam kab karna hai 
+
+_______________________________________________________________________
+
+05/forLoop
+
+for (let index = 1; index <= 20; index++) {
+    if (index == 5) {
+        console.log(`Detected 5`);
+        continue
+    }
+   console.log(`Value of i is ${index}`);
+    
+}
+
+// NOTE : break is use to break the control flow , meaning agar hum kisi bhi loop me , ya if me , ya switch case me break laga de to uske baad vala code execute nahi hota , control uss particular (loop, switch case , if ) se bahar aajata hai
+
+// NOTE: continue , continue use karne se , jis condition pe continue lagaya hota hai vo bas condition ke andar execute hoti hai and condition ke bahar aane ke baad vo skip ho jati hai and baaki poora loop vaise hi run karta hai jaise karna hota hai
+//Example (above code): jaise humne continue lagaya hai ek condition (if index == 5) pe , to kya hoga jaise hi loop me index ki value 5 hogi , then vo condition se match hogi and condition ke andar ka code execute hoga and fir control continue ko read karega and then continue bolega ki abhi iss index ki value se jo loop me hona tha usko skip kardo ( yaani , if ke bahar aane ke baad loop me jo bhi code ho ga vo nahi chalega index ki value 5 ke liye ,) then directly control index ki value updation me jaega ( yaani , index++) , and fir loop ki condition se match karega ( yaani, index <= 20 ) and fir loop ke andar jaega. ( yaani fir loop vaise hi normal tareeke se kaam karega jaise karna tha )
+
+//_________________________________________________________________________________
+
+// Promises hum javaScript me tab use karte hai jab humne koi task eventually completion show karna hota hai.
+
+// *************** IMPORTANT FOR INTERVIEWS 
+
+// History before promise
+
+// phele ke time pe kuch libraries hua karti thi jo allow karti thi javaScript me fetch , catch methods use karne ke liye , jaise BluBird aur Q ek library thi jo javaScript ke engine ko allow karti thi fetch and other async methods use karne ke liye , fir node environment ne inn libraries ki popularity ko dekhte huye inne apne javaScript engine me daal dia ( node run time environment ) to abh javaScript allow karta hai fetch and other async methods use karene ke liye through promies
