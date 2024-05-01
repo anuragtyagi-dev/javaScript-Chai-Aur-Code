@@ -22,7 +22,12 @@
 
 // let mg = "33"
 // let mgNeg = -mg
-// console.log(mgNeg)
+// console.log(mgNeg) // Output : -33
+
+// let mg = "harry"
+// let mgNeg = -mg
+// console.log(mgNeg) // Output : NaN because harrry is string and compiler is failed while converting it into a number 
+
 
 
 // We can perform basic arithmetic operations in console itself 
