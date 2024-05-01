@@ -224,5 +224,3 @@ document.querySelector('#stop').addEventListener('click', (event) => {
 });
 
 ```
-
-# Project Seven
