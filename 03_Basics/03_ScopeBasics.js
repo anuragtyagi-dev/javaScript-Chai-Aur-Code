@@ -32,7 +32,7 @@ if (true){
 
 // ************************* MOST IMPORTANT for INTERVIWES
 
-// Global Scope alag hota hai code environment me aur core scope me 
+// Global Scope alag hota hai code environment me aur core scope environment me 
 
 // core scope : matlab , browser pe jaake inspect karo , vaha ka console jo hai vo core environment hota hai , browser ke console ko core environment kahete hai aur vaha ke global scope ko core scope
 
