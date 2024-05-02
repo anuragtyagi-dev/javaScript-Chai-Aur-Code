@@ -6,6 +6,8 @@ function nameWriter(){
     for(i=0; i<10; i++) console.log("AnuragTyagi")
 }
 
+// NOTE : If a function is not returning anything , it will by default return undefined 
+
 // now whenever we need that code which we wrapped inside a function and assigned a particular name , we just call that function
 
 // nameWriter // this means we are referencing that function
@@ -69,7 +71,7 @@ userCard('jerry')
 userCard("")
 
 
-// CASE 3 : if argument is given nothing (nothing ka meaning hai undefined , ki user ne kuch value dia hi nahi ) to undefined case me by default value parameter ki use hogi
+// CASE 3 : if argument is given nothing (nothing ka meaning hai undefined , ki user ne kuch value dia hi nahi ) to undefined case me by default value parameter ki use hogi aur agar defalut parameter kuch bhi nahi set hai to undefined print hoga
 userCard()
 
 // CASE 4: if argument is null 

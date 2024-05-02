@@ -1,15 +1,9 @@
-let myObj = {
-    name:"anuarg",
-    email:"anurag@google.com",
-    userID: 11,
-    userLoggendIn: true,
+function MyFunc(bar){}
+    MyFunc.prototype.bar = bar ; 
+    var myFunc = new MyFunc(10);
 
-}
+    // delete myFunc.bar;    
+    console.log(myFunc.bar);    
 
-// console.log( Object.entries(myObj)[0] )
-// Object.entries(myObj)[0]
-
-for ( const value of Object.entries(myObj) ){
-    console.log(`${value}`)
-}
-
+    // delete MyFunc.prototype.bar;
+    // console.log(myFunc.bar);
