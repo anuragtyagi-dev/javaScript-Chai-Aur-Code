@@ -11,7 +11,20 @@ one.push(two)
 console.log(one)    
 // But this create an issue i.e. , it pushes the whole array inside an array , meaning final ouptup will be [ 2, 3, 4, 5, [5,6,7] ]
 
-// Example 2 , using concat method
+// ************************** IMPORTANT ********************************************
+
+// push method gives the lenght of an array if saved and not an array itself
+// Example
+
+let w1 = [1,2]
+let w2 = [4,5]
+
+let nw = w1.push(w2) // yaha jaise humne w1 me w2 push kardia to w1 me abh total 3 elements hai , [0] index pe 1, [1] index pe 2 and [3] index pe [4,5] and abh humne isse save kia hai nw me to nw actully uss w1 ki lenght store kar raha hai yaani push method use karke hum kisi bhi array ki lenght store kar sakte hai 
+
+console.log(nw) // OUTPUT: 3 // showing the stored lenght of w1 array due to the use of push method 
+
+                            // Example 2 , using concat method
+                            // concat , push ki tarah nahi hai , yeh new array hi banadeta hai aur store kardeta hai 
 
 let three = [1,2]
 let four = [4,5]
@@ -19,10 +32,11 @@ let four = [4,5]
 // three.concat(four) // this returns an array which needed to be save 
 let five = three.concat(four)
 
-console.log(five)
-//NOTE : concat is usually not prefred as it push that whole array (source) in index of the selected array (target) meaning , in above example : five consists now : [ 1, 2, [4, 5] ] so at index 2 , the whole four array is pushed.
+console.log(five) // OUTPUT : [1,2,4,5] // yaani this will return an array which need to be saved in variable 
 
-// Use spread method instead of concat
+
+
+                // Use spread method instead of concat
 
 let six = [1,2]
 let sev = [7,8]
@@ -83,7 +97,7 @@ console.table([`arr3 : ${arr3}`, `typeof arr3 : ${typeof arr3}`])
 
 // Array can give empty array , when and how ?
 
-console.log(Array.from({name:"Anurag" ,car:true})) // jab tak hum yeh na bataye ki array ke andar ka object ka usme konse konse key ko hume array banana hai with the help of from method tab tak vo ek empty array hi bana dega.
+console.log(Array.from({name:"Anurag" ,car:true})) // jab tak hum yeh na bataye ki array ke andar ka object ka usme konse konse key ko hume array banana hai with the help of from method tab tak vo ek empty object hi bana dega aur return kardega console pe check kar sakte ho .
 
 
 
