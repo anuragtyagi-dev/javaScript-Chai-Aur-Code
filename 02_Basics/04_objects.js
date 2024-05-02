@@ -34,7 +34,7 @@ let myObj = {
 
 console.table([ `Values of keys : ${Object.keys(myObj)}` , `Values of values : ${ Object.values(myObj)}` , `values together with keys and values : ${Object.entries(myObj)}`])
 
-// NOTE: This will give an array 
+// ********************* IMPORTANT NOTE :   NOTE: This will give an array 
 
 console.log(typeof Object.keys(myObj))
 
