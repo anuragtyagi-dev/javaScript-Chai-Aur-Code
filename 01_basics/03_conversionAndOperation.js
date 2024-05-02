@@ -27,6 +27,7 @@
 // let mg = "harry"
 // let mgNeg = -mg
 // console.log(mgNeg) // Output : NaN because harrry is string and compiler is failed while converting it into a number 
+//NOTE : String can not be converted as negative 
 
 
 

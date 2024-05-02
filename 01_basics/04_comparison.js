@@ -5,11 +5,11 @@ console.log(null)
 
 // NOTE: 
 /* 
-        //: loose equality check operator == ( this check the value and then perform type conversion )
+        //: loose equality check operator == ( yeh phele value ko check karata hai aur yeh bhi dekhta hai ki kya jo elements compare ho rahe hai same data type ke hai ya nahi , agar nahi hai to yaa to dono ko ye ek element ka dataType convert karta hai taaki aagar ho sake to dono element common dataType ko hojaye, fir agar dono element common dataType ke hojate hai fir yeh value ko check karta hai agar value tab bhi same nahi hai to OUTPUT : false dega nhai to agar value same hai to OUTPUT : true dega  )
         
-        //: strick equality check operator === ( this check the value and dataType without performing type conversion )
+        //: strick equality check operator === ( yeh value aur dataType as it is dono check karta hai , yaani yeh koi bhi type conversion nahi karega )
         
-        //: comparison operators > < >= <= ( these compare either sides with conversion to number )
+        //: comparison operators > < >= <= ( yeh == aur === isse thoda alag behave karte hai , yeh convert bhi karte hai aur values bhi check karte hai dono elements ki )
 */
 
 console.log(null > 0) // > ( conversion operator ) operator  will convert null into number and 0 is already a number then > operator treat both number into Boolean and then it will print true or false . as null in a number in 0 , then 0 > 0 is false
@@ -33,8 +33,8 @@ console.log(null >= 0) // in this , null will be converted to number due to the 
 console.log( null >= "0") // true
 console.log( null >= 0 ) // true
 console.log( null >= 0 ) // true
-console.log( null == undefined ) // true ( Special CASE )
-console.log( null === undefined ) // false 
+console.log( null == undefined ) // true ( Special CASE ) ( null is loosly eqauls to undefined )
+console.log( null === undefined ) // false ( here it is false , because it check strictly and null is object dataType and undefined is undefined dataType and also both having not the same value , null is null , undefined is undefined )
 console.log( null >= undefined ) // false
 console.log( null >= "undefined") // false
 

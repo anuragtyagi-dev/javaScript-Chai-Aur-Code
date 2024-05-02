@@ -14,6 +14,8 @@ alert("hello") // This is a browser specific element , We are using node as our 
 // null => standalone value
 // symbol => to find uniqueness , especially use in react and figma where the components are used and to differenciate or find uniqueness btw mulitple components symbol data type is used.
 
+// NaN ( DataType of NaN i.e. Not A Number is also Number in javaScript , though being Not a Number it also represent number dataType but it is not a meaning full number )
+
 /*  object  dataType */
 
 // Important for Interviews 
