@@ -20,3 +20,4 @@ let followers = one.then(function (data) {
 const now = calling.call(this)
 
 console.log(now)
+
