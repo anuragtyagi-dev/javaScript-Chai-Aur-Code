@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+</head>
+<body>
+    <button>Button Two</button>
+</body>
+<script> 
+
+function react() {
+    
+    this.library = "React";
+    this.server = "https";
+
+    this.handle = function() {
+        console.log("BUTTON CLICKED");
+        console.log(`${this.library}`);
+        console.log(this);
+    }.bind(this)
+ 
+    document.querySelector('button').addEventListener('click', this.handle );
+}
+new react()
+
+</script>
+</html>

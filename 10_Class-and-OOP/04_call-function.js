@@ -54,7 +54,7 @@ console.log(userOne)
 
 function user(username){
     this.username = username
-    e
+    
   }
 
 function createUser(username, userEmail, userPassword){
